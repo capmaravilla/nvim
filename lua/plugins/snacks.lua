@@ -5,6 +5,18 @@ return {
   opts = {
     explorer = { enabled = true },
     picker = { enabled = true },
+    bigfile = { enabled = true },
+    dashboard = { enabled = true },
+    indent = { enabled = true },
+    input = { enabled = true },
+    image = { enabled = true },
+    notifier = { enabled = true },
+    quickfile = { enabled = true },
+    scope = { enabled = true },
+    scroll = { enabled = true },
+    statuscolumn = { enabled = true },
+    toggle = { enabled = true },
+    words = { enabled = false },
   },
   keys = {
   -- Top Pickers & Explorer
