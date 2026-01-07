@@ -1,15 +1,20 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
+vim.opt.fillchars = { eob = " " }
+vim.opt.cursorline = true
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 2
 
 -- Este lo tenemos actualmente en lazy.lua
 --vim.g.mapleader = " " 
 
 --Otras configuraciones
---vim.opt.cursorline = false
 --vim.opt.wrap = true
---vim.opt.expandtab = false
---vim.opt.tabstop = 4
---vim.opt.shiftwidth = 4
---vim.opt.swapfile = false
---vim.opt.termguicolors = true
+
+
+vim.diagnostic.config({
+  virtual_text = true
+})
