@@ -12,7 +12,7 @@ vim.opt.shiftwidth = 2
 -- Mappings
 vim.keymap.set("n","<Tab>", vim.cmd.bnext)
 vim.keymap.set("n","<S-Tab>", vim.cmd.bprevious)
-vim.keymap.set("n","<leader>o", "o<Esc>k")
+-- vim.keymap.set("n","<leader>o", "o<Esc>k")
 -- Este lo tenemos actualmente en lazy.lua
 --vim.g.mapleader = " " 
 
