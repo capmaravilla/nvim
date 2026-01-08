@@ -51,12 +51,12 @@ return {
 		-- ATAJOS
 		dashboard.section.buttons.val = {
 
-			dashboard.button("e", "󰈔  Nuevo archivo", ":ene <BAR> startinsert <CR>"),
-			dashboard.button("f", "󰱼  Buscar archivo", ":Telescope find_files <CR>"),
-			dashboard.button("r", "󰄉  Recientes", ":Telescope oldfiles <CR>"),
+			dashboard.button("e", "󰈔  New File", ":ene <BAR> startinsert <CR>"),
+			dashboard.button("f", "󰱼  Search File", ":Telescope find_files <CR>"),
+			dashboard.button("r", "󰄉  Recent Files", ":Telescope oldfiles <CR>"),
 			dashboard.button("g", "󰊄  Ripgrep", ":Telescope live_grep <CR>"),
 			dashboard.button("p", "󰏖  Plugins", ":Lazy <CR>"),
-			dashboard.button("q", "󰩈  Salir", ":qa<CR>"),
+			dashboard.button("q", "󰩈  Quit", ":qa<CR>"),
 		}
 
 		-- FOOTER (sustituye la firma)
