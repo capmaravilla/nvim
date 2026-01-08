@@ -1,15 +1,15 @@
 return {
 	-- "Shatur/neovim-ayu",
 	-- "rebelot/kanagawa.nvim",
-  -- "catppuccin/nvim",
-  'wuelnerdotexe/vim-enfocado',
+  "catppuccin/nvim",
+  -- 'wuelnerdotexe/vim-enfocado',
 	lazy = false,
 	priority = 1000,
 	config = function()
 		-- vim.cmd([[colorscheme ayu]])
 		-- vim.cmd([[colorscheme kanagawa]])
-		-- vim.cmd([[colorscheme catppuccin]])
-		vim.cmd([[colorscheme enfocado]])
+		vim.cmd([[colorscheme catppuccin]])
+		-- vim.cmd([[colorscheme enfocado]])
 
 		-- Hacer el fondo transparente
 		vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
