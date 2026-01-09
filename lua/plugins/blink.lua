@@ -1,54 +1,121 @@
--- Autocompletado
+-- ============================================
+-- BLINK.CMP: SISTEMA DE AUTOCOMPLETADO AVANZADO
+-- ============================================
+-- Plugin de autocompletado rápido y moderno con soporte para LSP, snippets, etc.
+-- NOTA: Este plugin puede reemplazar o complementar nvim-cmp
+-- Si usas blink.cmp, considera desactivar nvim-cmp para evitar conflictos
+
 return {
 	"saghen/blink.cmp",
-	-- optional: provides snippets for the snippet source
+	-- Proporciona snippets predefinidos para varios lenguajes
 	dependencies = { "rafamadriz/friendly-snippets" },
 
-	-- use a release tag to download pre-built binaries
+	-- Usa una versión específica (tag de release) para descargar binarios precompilados
 	version = "1.*",
-	-- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
-	-- build = 'cargo build --release',
-	-- If you use nix, you can build from source using latest nightly rust with:
-	-- build = 'nix run .#build-plugin',
+	-- Otras opciones de build:
+	-- build = 'cargo build --release',  -- Compilar desde fuente (requiere Rust nightly)
+	-- build = 'nix run .#build-plugin',  -- Si usas Nix
 
 	---@module 'blink.cmp'
 	---@type blink.cmp.Config
 	opts = {
-		-- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
-		-- 'super-tab' for mappings similar to vscode (tab to accept)
-		-- 'enter' for enter to accept
-		-- 'none' for no mappings
+		-- ============================================
+		-- PRESET DE MAPEOS DE TECLADO
+		-- ============================================
+		-- 'default': Mapeos similares a completado nativo (C-y para aceptar)
+		-- 'super-tab': Mapeos estilo VSCode (Tab para aceptar)
+		-- 'enter': Enter para aceptar (configuración actual)
+		-- 'none': Sin mapeos automáticos
 		--
-		-- All presets have the following mappings:
-		-- C-space: Open menu or open docs if already open
-		-- C-n/C-p or Up/Down: Select next/previous item
-		-- C-e: Hide menu
-		-- C-k: Toggle signature help (if signature.enabled = true)
-		--
-		-- See :h blink-cmp-config-keymap for defining your own keymap
+		-- Todos los presets incluyen estos mapeos:
+		-- C-Space: Abre menú o documentación si ya está abierto
+		-- C-n/C-p o Up/Down: Selecciona siguiente/anterior item
+		-- C-e: Oculta el menú
+		-- C-k: Alterna ayuda de firma (si signature.enabled = true)
 		keymap = { preset = "enter" },
+		-- Mapeos personalizados (ver :h blink-cmp-config-keymap):
+		-- keymap = {
+		--   custom = {
+		--     ["<Tab>"] = "select_next",
+		--     ["<S-Tab>"] = "select_prev",
+		--   },
+		-- },
 
+		-- ============================================
+		-- APARIENCIA
+		-- ============================================
 		appearance = {
-			-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-			-- Adjusts spacing to ensure icons are aligned
+			-- 'mono' (por defecto): Usa 'Nerd Font Mono' para alineación perfecta de iconos
+			-- 'normal': Usa 'Nerd Font' normal
 			nerd_font_variant = "mono",
+			-- Otras opciones de apariencia:
+			-- border = "rounded",  -- Estilo del borde del menú
+			-- max_width = 50,     -- Ancho máximo del menú
+			-- max_height = 10,     -- Altura máxima del menú
 		},
 
-		-- (Default) Only show the documentation popup when manually triggered
-		completion = { documentation = { auto_show = true } },
+		-- ============================================
+		-- COMPORTAMIENTO DE COMPLETADO
+		-- ============================================
+		completion = {
+			-- Muestra la documentación automáticamente al seleccionar un item
+			documentation = { auto_show = true },
+			-- Otras opciones:
+			-- documentation = {
+			--   auto_show = false,  -- Solo muestra al presionar C-Space
+			--   position = "right",  -- Posición de la documentación
+			--   max_width = 60,     -- Ancho máximo
+			-- },
+			-- trigger_on_delete = true,  -- Activa completado al borrar
+		},
 
-		-- Default list of enabled providers defined so that you can extend it
-		-- elsewhere in your config, without redefining it, due to `opts_extend`
+		-- ============================================
+		-- FUENTES DE AUTOCOMPLETADO
+		-- ============================================
+		-- Lista de fuentes habilitadas por defecto
+		-- Puedes extender esta lista en otros archivos usando `opts_extend`
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer" },
+			default = {
+				"lsp",      -- Completado desde Language Server Protocol
+				"path",     -- Completado de rutas de archivos
+				"snippets", -- Snippets de código
+				"buffer",   -- Palabras del buffer actual
+			},
+			-- Otras fuentes disponibles:
+			-- "nvim_lua",  -- API de Neovim
+			-- "calc",      -- Calculadora
+			-- "emoji",     -- Emojis
+			-- "tags",      -- Tags de ctags
 		},
 
-		-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
-		-- You may use a lua implementation instead by using `implementation = "lua"` or fallback to the lua implementation,
-		-- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
-		--
-		-- See the fuzzy documentation for more information
-		fuzzy = { implementation = "prefer_rust_with_warning" },
+		-- ============================================
+		-- BÚSQUEDA DIFUSA (FUZZY MATCHING)
+		-- ============================================
+		-- Motor de búsqueda difusa para mejor rendimiento y tolerancia a errores
+		fuzzy = {
+			-- 'prefer_rust_with_warning': Usa Rust si está disponible, sino Lua (con advertencia)
+			-- 'prefer_rust': Usa Rust si está disponible, sino Lua (sin advertencia)
+			-- 'rust': Solo usa Rust (falla si no está disponible)
+			-- 'lua': Solo usa implementación Lua
+			implementation = "prefer_rust_with_warning",
+			-- Otras opciones:
+			-- min_char_length = 1,  -- Longitud mínima para activar búsqueda difusa
+			-- threshold = 0.5,      -- Umbral de similitud (0-1)
+		},
+
+		-- ============================================
+		-- OTRAS OPCIONES
+		-- ============================================
+		-- signature = {
+		--   enabled = true,  -- Muestra ayuda de firma de funciones
+		--   trigger_on_typing = true,  -- Se activa al escribir
+		-- },
+		-- snippet = {
+		--   expand = function(args)
+		--     require("luasnip").lsp_expand(args.body)
+		--   end,
+		-- },
 	},
+	-- Permite extender las fuentes por defecto sin redefinirlas
 	opts_extend = { "sources.default" },
 }

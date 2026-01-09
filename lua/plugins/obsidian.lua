@@ -133,9 +133,17 @@ return {
 		-- ============================================
 		follow_url_func = function(url)
 			-- Abre URLs en tu navegador por defecto
-			vim.fn.jobstart({ "xdg-open", url }) -- Linux
-			-- vim.fn.jobstart({"open", url})  -- macOS
-			-- vim.fn.jobstart({"start", url})  -- Windows
+			-- CORREGIDO: Usa el comando correcto según el sistema operativo
+			if vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
+				-- Windows
+				vim.fn.jobstart({ "cmd", "/c", "start", "", url })
+			elseif vim.fn.has("mac") == 1 then
+				-- macOS
+				vim.fn.jobstart({ "open", url })
+			else
+				-- Linux y otros sistemas Unix
+				vim.fn.jobstart({ "xdg-open", url })
+			end
 		end,
 
 		-- ============================================
