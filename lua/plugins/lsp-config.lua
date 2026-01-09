@@ -18,6 +18,7 @@ return {
 				"jsonls",
 				"html",
 				"cssls",
+				"marksman",
 			},
 		},
 	},
@@ -46,6 +47,7 @@ return {
 				"jsonls",
 				"html",
 				"cssls",
+				"marksman",
 			})
 
 			-- Desactivar formateo vía LSP
@@ -74,6 +76,7 @@ return {
 				html = { "prettier" },
 				css = { "prettier" },
 				json = { "prettier" },
+				markdown = { "prettier" },
 				lua = { "stylua" },
 				python = { "black" },
 			},

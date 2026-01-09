@@ -1,11 +1,3 @@
--- return {
--- 	"folke/which-key.nvim",
--- 	event = "VeryLazy",
--- 	config = function()
--- 		require("which-key").setup()
--- 	end,
--- }
-
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
@@ -13,13 +5,13 @@ return {
 		-- preset = "classic",
 		preset = "modern",
 		-- preset = "helix",
-		-- icons = {
-		-- 	rules = {
-		-- 		{ plugin = "laravel.nvim", icon = " ", color = "red" },
-		-- 		{ plugin = "nvim-dap-ui", icon = " ", color = "green" },
-		-- 		{ pattern = "obsidian", icon = " ", color = "blue" },
-		-- 	},
-		-- },
+		icons = {
+			rules = {
+				-- { plugin = "laravel.nvim", icon = " ", color = "red" },
+				-- { plugin = "nvim-dap-ui", icon = " ", color = "green" },
+				{ pattern = "obsidian", icon = " ", color = "blue" },
+			},
+		},
 	},
 	keys = {
 		{

@@ -50,12 +50,10 @@ return {
 		}
 		-- ATAJOS
 		dashboard.section.buttons.val = {
-
-			dashboard.button("e", "󰈔  New File", ":ene <BAR> startinsert <CR>"),
-			dashboard.button("f", "󰱼  Search File", ":Telescope find_files <CR>"),
 			dashboard.button("r", "󰄉  Recent Files", ":Telescope oldfiles <CR>"),
 			dashboard.button("g", "󰊄  Ripgrep", ":Telescope live_grep <CR>"),
-			dashboard.button("p", "󰏖  Plugins", ":Lazy <CR>"),
+			dashboard.button("l", "󰒲  Lazy", ":Lazy <CR>"),
+			dashboard.button("c", "  Config", ":lua require('oil').open(vim.fn.stdpath('config')) <CR>"),
 			dashboard.button("q", "󰩈  Quit", ":qa<CR>"),
 		}
 
@@ -76,5 +74,3 @@ return {
 		alpha.setup(dashboard.opts)
 	end,
 }
-
---
