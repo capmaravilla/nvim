@@ -15,20 +15,46 @@ return {
 	},
 	cmd = "Telescope",  -- Carga cuando usas el comando Telescope
 	keys = {
+		-- ============================================
+		-- MAPEOS PRINCIPALES (reemplazan a fzf-lua)
+		-- ============================================
 		-- Buscar archivos en el proyecto
-		{ "<leader>tf", "<cmd>Telescope find_files<cr>", desc = "Telescope Find Files" },
+		{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
 		-- Búsqueda de texto en tiempo real (live grep)
-		{ "<leader>tg", "<cmd>Telescope live_grep<cr>", desc = "Telescope Grep" },
+		{ "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
 		-- Lista de buffers abiertos
-		{ "<leader>tb", "<cmd>Telescope buffers<cr>", desc = "Telescope Buffers" },
+		{ "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
 		-- Buscar en la ayuda de Neovim
-		{ "<leader>th", "<cmd>Telescope help_tags<cr>", desc = "Telescope Help" },
-		-- Otros mapeos útiles que puedes añadir:
-		-- { "<leader>tr", "<cmd>Telescope oldfiles<cr>", desc = "Recent files" },
-		-- { "<leader>ts", "<cmd>Telescope grep_string<cr>", desc = "Grep string under cursor" },
+		{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help Tags" },
+		-- Archivos recientes
+		{ "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent Files" },
+		-- Buscar palabra bajo el cursor
+		{ "<leader>fs", "<cmd>Telescope grep_string<cr>", desc = "Grep String" },
+		
+		-- ============================================
+		-- MAPEOS LSP (LANGUAGE SERVER PROTOCOL)
+		-- ============================================
+		-- Ir a la definición de un símbolo (reemplaza fzf-lua)
+		{ "gd", "<cmd>Telescope lsp_definitions<cr>", desc = "Go to Definition" },
+		-- Ver todas las referencias de un símbolo
+		{ "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
+		-- Ver implementaciones de una interfaz/tipo
+		{ "gi", "<cmd>Telescope lsp_implementations<cr>", desc = "Implementations" },
+		-- Ver símbolos del documento actual
+		{ "<leader>ds", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document Symbols" },
+		-- Ver símbolos del workspace
+		{ "<leader>ws", "<cmd>Telescope lsp_workspace_symbols<cr>", desc = "Workspace Symbols" },
+		-- Ver diagnósticos del documento
+		{ "<leader>dd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document Diagnostics" },
+		-- Ver todos los diagnósticos
+		{ "<leader>dD", "<cmd>Telescope diagnostics<cr>", desc = "All Diagnostics" },
+		
+		-- ============================================
+		-- OTROS MAPEOS ÚTILES
+		-- ============================================
 		-- { "<leader>tk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
 		-- { "<leader>tc", "<cmd>Telescope commands<cr>", desc = "Commands" },
-		-- { "<leader>td", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
+		-- { "<leader>tr", "<cmd>Telescope registers<cr>", desc = "Registers" },
 	},
 	config = function()
 		local telescope = require("telescope")

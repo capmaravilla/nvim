@@ -150,7 +150,7 @@ return {
 					-- Mapeos locales del buffer (solo funcionan cuando hay LSP activo)
 					local opts = { buffer = bufnr, noremap = true, silent = true }
 
-					-- Ver definición (gd ya está mapeado en fzf.lua, pero este es el estándar)
+					-- Ver declaración (gd ya está mapeado en telescope.lua para definiciones)
 					vim.keymap.set("n", "gD", vim.lsp.buf.declaration, vim.tbl_extend("force", opts, { desc = "Go to declaration" }))
 					-- Ver implementación
 					vim.keymap.set("n", "gI", vim.lsp.buf.implementation, vim.tbl_extend("force", opts, { desc = "Go to implementation" }))

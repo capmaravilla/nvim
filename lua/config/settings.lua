@@ -55,42 +55,15 @@ vim.opt.shiftwidth = 2
 -- vim.opt.autoindent = true        -- Mantiene indentación de línea anterior
 
 -- ============================================
--- MAPEOS DE TECLADO - NAVEGACIÓN DE BUFFERS
--- ============================================
--- Navegar al siguiente buffer con Tab (solo en modo normal)
-vim.keymap.set("n", "<Tab>", vim.cmd.bnext, { desc = "Next buffer" })
--- Navegar al buffer anterior con Shift+Tab (solo en modo normal)
-vim.keymap.set("n", "<S-Tab>", vim.cmd.bprevious, { desc = "Previous buffer" })
--- NOTA: Estos mapeos solo funcionan en modo normal (n)
--- En modo insert, <Tab> se usa para autocompletado (ver nvim-cmp.lua)
-
--- Mapeo comentado (por si lo necesitas más adelante):
--- vim.keymap.set("n", "<leader>o", "o<Esc>k", { desc = "Insert new line above" })
-
--- ============================================
 -- DIAGNÓSTICOS LSP
 -- ============================================
 -- Configura cómo se muestran los errores y advertencias del LSP
 vim.diagnostic.config({
-  virtual_text = true,  -- Muestra errores en línea como texto virtual
-  -- Otras opciones disponibles:
-  -- signs = true,                    -- Muestra signos en la columna izquierda
-  -- underline = true,                -- Subraya el código con errores
-  -- update_in_insert = false,        -- No actualiza mientras escribes
-  -- severity_sort = true,            -- Ordena por severidad
-  -- float = { border = "rounded" },  -- Estilo del popup flotante
+	virtual_text = true, -- Muestra errores en línea como texto virtual
+	-- Otras opciones disponibles:
+	-- signs = true,                    -- Muestra signos en la columna izquierda
+	-- underline = true,                -- Subraya el código con errores
+	-- update_in_insert = false,        -- No actualiza mientras escribes
+	-- severity_sort = true,            -- Ordena por severidad
+	-- float = { border = "rounded" },  -- Estilo del popup flotante
 })
-
--- ============================================
--- MAPEO PARA FORMATEO DE CÓDIGO
--- ============================================
--- Formatea el buffer actual usando Conform
--- <leader>f formatea todo el archivo
-vim.keymap.set("n", "<leader>f", function()
-  require("conform").format({ async = true })
-end, { desc = "Format buffer (Conform)" })
--- Otras opciones de formateo:
--- vim.keymap.set("v", "<leader>f", function()
---   require("conform").format({ async = true, range = true })
--- end, { desc = "Format selection" })
-
