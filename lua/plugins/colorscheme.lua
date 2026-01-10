@@ -6,13 +6,13 @@
 
 return {
 	-- Otros temas comentados que puedes probar:
-	-- "Shatur/neovim-ayu",        -- Tema Ayu (claro/oscuro)
+	"Shatur/neovim-ayu",        -- Tema Ayu (claro/oscuro)
 	-- "rebelot/kanagawa.nvim",   -- Tema Kanagawa (inspirado en estampas japonesas)
 	-- "anAcc22/sakura.nvim",   -- Tema sakura (tonos pastel)
 	-- "wuelnerdotexe/vim-enfocado",  -- Tema Enfocado (minimalista)
 	-- "catppuccin/nvim",
 	-- "folke/tokyonight.nvim",
-	"scottmckendry/cyberdream.nvim",
+	-- "scottmckendry/cyberdream.nvim",
 	lazy = false, -- Carga inmediatamente (no lazy)
 	priority = 1000, -- Alta prioridad para que se cargue antes que otros plugins
 	-- dependencies = "rktjmp/lush.nvim",
@@ -21,11 +21,11 @@ return {
 		-- Variantes disponibles: "catppuccin-mocha", "catppuccin-macchiato", "catppuccin-frappe", "catppuccin-latte"
 		-- vim.cmd([[colorscheme catppuccin]])
 		-- Otros temas que puedes usar:
-		-- vim.cmd([[colorscheme ayu]])
+		vim.cmd([[colorscheme ayu]])
 		-- vim.cmd([[colorscheme tokyonight]])
 		-- vim.cmd([[colorscheme sakura]])
 		-- vim.cmd([[colorscheme enfocado]])
-		vim.cmd([[colorscheme cyberdream]])
+		-- vim.cmd([[colorscheme cyberdream]])
 		-- vim.opt.background = "dark"
 
 		-- ============================================
