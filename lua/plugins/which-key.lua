@@ -116,6 +116,7 @@ return {
 			{ "<leader>f", group = "Telescope" },
 			{ "<leader>n", group = "Obsidian" },
 			{ "<leader>g", group = "Git" },
+			{ "<leader>l", group = "LSP" },
 		})
 	end,
 }

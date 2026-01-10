@@ -7,13 +7,13 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	dependencies = {
-		"nvim-lua/plenary.nvim",  -- Librería de utilidades requerida
+		"nvim-lua/plenary.nvim", -- Librería de utilidades requerida
 		-- Extensiones opcionales que puedes añadir:
 		-- "nvim-telescope/telescope-fzf-native.nvim",  -- Mejora rendimiento con fzf
 		-- "nvim-telescope/telescope-file-browser.nvim",  -- Explorador de archivos
 		-- "nvim-telescope/telescope-ui-select.nvim",  -- Selector UI mejorado
 	},
-	cmd = "Telescope",  -- Carga cuando usas el comando Telescope
+	cmd = "Telescope", -- Carga cuando usas el comando Telescope
 	keys = {
 		-- ============================================
 		-- MAPEOS PRINCIPALES (reemplazan a fzf-lua)
@@ -30,7 +30,7 @@ return {
 		{ "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent Files" },
 		-- Buscar palabra bajo el cursor
 		{ "<leader>fs", "<cmd>Telescope grep_string<cr>", desc = "Grep String" },
-		
+
 		-- ============================================
 		-- MAPEOS LSP (LANGUAGE SERVER PROTOCOL)
 		-- ============================================
@@ -48,7 +48,7 @@ return {
 		{ "<leader>fd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document Diagnostics" },
 		-- Ver todos los diagnósticos
 		{ "<leader>fD", "<cmd>Telescope diagnostics<cr>", desc = "All Diagnostics" },
-		
+
 		-- ============================================
 		-- OTROS MAPEOS ÚTILES
 		-- ============================================
@@ -66,13 +66,13 @@ return {
 				layout_config = {
 					-- Layout horizontal (por defecto)
 					horizontal = {
-						width = 0.8,         -- Ancho de la ventana (80%)
+						width = 0.8, -- Ancho de la ventana (80%)
 						preview_width = 0.5, -- Ancho de la vista previa (50%)
 					},
 					-- Layout vertical
 					vertical = {
-						height = 0.8,         -- Altura de la ventana (80%)
-						preview_height = 0.5,  -- Altura de la vista previa (50%)
+						height = 0.8, -- Altura de la ventana (80%)
+						preview_height = 0.5, -- Altura de la vista previa (50%)
 					},
 					-- Otros layouts disponibles:
 					-- center = { height = 0.4, width = 0.5 },
@@ -82,7 +82,7 @@ return {
 				-- Ordena resultados de forma ascendente (primer resultado arriba)
 				sorting_strategy = "ascending",
 				-- Prefijo del prompt (el emoji de lupa)
-				prompt_prefix = "🔍 ",
+				prompt_prefix = "   ",
 				-- Otras opciones disponibles:
 				-- selection_strategy = "reset",  -- Estrategia de selección
 				-- border = true,  -- Muestra borde

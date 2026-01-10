@@ -35,14 +35,14 @@ return {
 			require("mason-lspconfig").setup({
 				-- Lista de servidores LSP que se instalarán automáticamente
 				ensure_installed = {
-					"lua_ls",    -- Lua Language Server (para archivos .lua)
-					"eslint",    -- ESLint (para JavaScript/TypeScript)
-					"pyright",   -- Pyright (para Python)
-					"ts_ls",     -- TypeScript Language Server
-					"jsonls",    -- JSON Language Server
-					"html",      -- HTML Language Server
-					"cssls",     -- CSS Language Server
-					"marksman",  -- Markdown Language Server
+					"lua_ls", -- Lua Language Server (para archivos .lua)
+					"eslint", -- ESLint (para JavaScript/TypeScript)
+					"pyright", -- Pyright (para Python)
+					"ts_ls", -- TypeScript Language Server
+					"jsonls", -- JSON Language Server
+					"html", -- HTML Language Server
+					"cssls", -- CSS Language Server
+					"marksman", -- Markdown Language Server
 					-- Otros servidores LSP que puedes añadir:
 					-- "rust_analyzer",  -- Rust
 					-- "gopls",         -- Go
@@ -68,7 +68,7 @@ return {
 			-- Lazydev proporciona autocompletado para la API de Neovim en archivos Lua
 			{
 				"folke/lazydev.nvim",
-				ft = "lua",  -- Solo se activa en archivos .lua
+				ft = "lua", -- Solo se activa en archivos .lua
 				opts = {
 					library = {
 						{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
@@ -119,7 +119,7 @@ return {
 						-- end,
 					})
 				end
-			end, 100)  -- Espera 100ms para asegurar que todo esté cargado
+			end, 100) -- Espera 100ms para asegurar que todo esté cargado
 
 			-- ============================================
 			-- DESACTIVAR FORMATEO VÍA LSP
@@ -151,27 +151,82 @@ return {
 					local opts = { buffer = bufnr, noremap = true, silent = true }
 
 					-- Ver declaración (gd ya está mapeado en telescope.lua para definiciones)
-					vim.keymap.set("n", "gD", vim.lsp.buf.declaration, vim.tbl_extend("force", opts, { desc = "Go to declaration" }))
+					vim.keymap.set(
+						"n",
+						"ld",
+						vim.lsp.buf.declaration,
+						vim.tbl_extend("force", opts, { desc = "Go to declaration" })
+					)
 					-- Ver implementación
-					vim.keymap.set("n", "gI", vim.lsp.buf.implementation, vim.tbl_extend("force", opts, { desc = "Go to implementation" }))
+					vim.keymap.set(
+						"n",
+						"li",
+						vim.lsp.buf.implementation,
+						vim.tbl_extend("force", opts, { desc = "Go to implementation" })
+					)
 					-- Ver tipo de símbolo
-					vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, vim.tbl_extend("force", opts, { desc = "Go to type definition" }))
+					vim.keymap.set(
+						"n",
+						"lD",
+						vim.lsp.buf.type_definition,
+						vim.tbl_extend("force", opts, { desc = "Go to type definition" })
+					)
 					-- Ver referencias
-					vim.keymap.set("n", "gR", vim.lsp.buf.references, vim.tbl_extend("force", opts, { desc = "References" }))
+					vim.keymap.set(
+						"n",
+						"lr",
+						vim.lsp.buf.references,
+						vim.tbl_extend("force", opts, { desc = "References" })
+					)
 					-- Renombrar símbolo
-					vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, vim.tbl_extend("force", opts, { desc = "Rename symbol" }))
+					vim.keymap.set(
+						"n",
+						"<leader>ln",
+						vim.lsp.buf.rename,
+						vim.tbl_extend("force", opts, { desc = "Rename symbol" })
+					)
 					-- Ver información de código (hover)
-					vim.keymap.set("n", "K", vim.lsp.buf.hover, vim.tbl_extend("force", opts, { desc = "Hover documentation" }))
+					vim.keymap.set(
+						"n",
+						"lK",
+						vim.lsp.buf.hover,
+						vim.tbl_extend("force", opts, { desc = "Hover documentation" })
+					)
 					-- Ver firma de función
-					vim.keymap.set("n", "<C-i>", vim.lsp.buf.signature_help, vim.tbl_extend("force", opts, { desc = "Signature help" }))
+					-- vim.keymap.set(
+					-- 	"n",
+					-- 	"<C-i>",
+					-- 	vim.lsp.buf.signature_help,
+					-- 	vim.tbl_extend("force", opts, { desc = "Signature help" })
+					-- )
 					-- Acciones de código (refactor, etc.)
-					vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, vim.tbl_extend("force", opts, { desc = "Code actions" }))
+					vim.keymap.set(
+						"n",
+						"<leader>la",
+						vim.lsp.buf.code_action,
+						vim.tbl_extend("force", opts, { desc = "Code actions" })
+					)
 					-- Ver diagnósticos de la línea actual
-					vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, vim.tbl_extend("force", opts, { desc = "Line diagnostics" }))
-					-- Navegar al siguiente error
-					vim.keymap.set("n", "]d", vim.diagnostic.goto_next, vim.tbl_extend("force", opts, { desc = "Next diagnostic" }))
-					-- Navegar al error anterior
-					vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, vim.tbl_extend("force", opts, { desc = "Previous diagnostic" }))
+					vim.keymap.set(
+						"n",
+						"<leader>ld",
+						vim.diagnostic.open_float,
+						vim.tbl_extend("force", opts, { desc = "Line diagnostics" })
+					)
+					-- -- Navegar al siguiente error
+					-- vim.keymap.set(
+					-- 	"n",
+					-- 	"]d",
+					-- 	vim.diagnostic.goto_next,
+					-- 	vim.tbl_extend("force", opts, { desc = "Next diagnostic" })
+					-- )
+					-- -- Navegar al error anterior
+					-- vim.keymap.set(
+					-- 	"n",
+					-- 	"[d",
+					-- 	vim.diagnostic.goto_prev,
+					-- 	vim.tbl_extend("force", opts, { desc = "Previous diagnostic" })
+					-- )
 				end,
 			})
 		end,
