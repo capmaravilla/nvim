@@ -10,6 +10,7 @@ return {
 		-- Snacks proporciona la UI para input y ventanas
 		{ "folke/snacks.nvim", opts = { input = {}, picker = {}, terminal = {} } },
 	},
+
 	keys = {
 		-- ============================================
 		-- MAPEOS PRINCIPALES
@@ -29,7 +30,7 @@ return {
 			function()
 				require("opencode").select({ submit = true })
 			end,
-			mode = { "n", "x" },  -- Funciona en modo normal y visual
+			mode = { "n", "x" }, -- Funciona en modo normal y visual
 			desc = "OpenCode select",
 		},
 		-- Pregunta algo a OpenCode (sin contexto)
@@ -134,7 +135,7 @@ return {
 			provider = {
 				snacks = {
 					win = {
-						position = "left",  -- Posición de la ventana (izquierda)
+						position = "left", -- Posición de la ventana (izquierda)
 						-- Otras opciones:
 						-- position = "right",  -- Derecha
 						-- position = "top",    -- Arriba

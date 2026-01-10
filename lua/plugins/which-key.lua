@@ -6,20 +6,22 @@
 
 return {
 	"folke/which-key.nvim",
-	event = "VeryLazy",  -- Carga tarde para mejor rendimiento
+	event = "VeryLazy", -- Carga tarde para mejor rendimiento
 	opts = {
 		-- ============================================
 		-- PRESET DE DISEÑO
 		-- ============================================
-		-- "classic": Diseño clásico
-		-- "modern": Diseño moderno (actual)
-		-- "helix": Diseño estilo Helix editor
+
 		preset = "modern",
 		-- Otras opciones:
 		-- preset = "classic",
 		-- preset = "helix",
 
-		-- ============================================
+		-- ESTO ES CRUCIAL: controla cuándo se expanden los grupos
+		expand = 0, -- 0 = nunca expandir automáticamente
+		-- 1 = expandir si solo hay un grupo
+		-- función = control personalizado		-- ============================================
+
 		-- ICONOS PERSONALIZADOS
 		-- ============================================
 		icons = {
@@ -27,10 +29,11 @@ return {
 				-- Icono personalizado para comandos de Obsidian
 				{ pattern = "obsidian", icon = "  ", color = "blue" },
 				-- Otros iconos que puedes añadir:
-				-- { pattern = "git", icon = "  ", color = "red" },
-				-- { pattern = "lsp", icon = "  ", color = "green" },
-				-- { pattern = "telescope", icon = "  ", color = "purple" },
+				{ pattern = "git", icon = "  ", color = "orange" },
+				{ pattern = "lsp", icon = "  ", color = "green" },
+				{ pattern = "telescope", icon = "  ", color = "purple" },
 			},
+			group = "+",
 		},
 
 		-- ============================================
@@ -100,6 +103,18 @@ return {
 		--   desc = "Show all keymaps",
 		-- },
 	},
+
+  -- Codigo para hacer los grupos
+
+  config = function(_, opts)
+    local wk = require("which-key")
+
+    wk.setup(opts)
+
+    -- GRUPO <leader>a
+    wk.add({
+      { "<leader>a", group = "ia", icon = "🤖" },
+    })
+  end,
+
 }
-
-

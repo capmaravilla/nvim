@@ -22,7 +22,7 @@
 -- ============================================
 -- Formatea el buffer actual usando Conform
 -- <leader>f formatea todo el archivo
-vim.keymap.set("n", "<leader>f", function()
+vim.keymap.set("n", "<leader>cf", function()
 	require("conform").format({ async = true })
 end, { desc = "Format buffer (Conform)" })
 -- Otras opciones de formateo:
