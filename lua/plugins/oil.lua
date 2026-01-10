@@ -54,14 +54,19 @@ return {
 			-- MAPEOS DE TECLADO DENTRO DE OIL
 			-- ============================================
 			keymaps = {
-				["g?"] = "actions.show_help",        -- Muestra ayuda
+				
+        ["<C-h>"] = false,        
+        ["<C-l>"] = false,        
+        ["<C-t>"] = false,        
+
+        ["g?"] = "actions.show_help",        -- Muestra ayuda
 				["<CR>"] = "actions.select",          -- Abre archivo/carpeta
-				["<C-s>"] = "actions.select_vsplit",  -- Abre en split vertical
-				["<C-h>"] = "actions.select_split",   -- Abre en split horizontal
-				["<C-t>"] = "actions.select_tab",     -- Abre en nueva pestaña
+				["<leader><CR>"] = "actions.select_vsplit",  -- Abre en split vertical
+				["<C><s>"] = "actions.select_split",   -- Abre en split horizontal
+				-- ["<C-t>"] = "actions.select_tab",     -- Abre en nueva pestaña
 				["<C-p>"] = "actions.preview",        -- Vista previa
 				["<C-c>"] = "actions.close",          -- Cierra Oil
-				["<C-l>"] = "actions.refresh",        -- Actualiza la vista
+				["<C-r>"] = "actions.refresh",        -- Actualiza la vista
 				["<backspace>"] = "actions.parent",   -- Sube al directorio padre
 				["_"] = "actions.open_cwd",           -- Abre directorio actual
 				["`"] = "actions.cd",                -- Cambia directorio
