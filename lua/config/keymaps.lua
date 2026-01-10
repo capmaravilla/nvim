@@ -8,9 +8,9 @@
 -- MAPEOS DE TECLADO - NAVEGACIÓN DE BUFFERS
 -- ============================================
 -- Navegar al siguiente buffer con Tab (solo en modo normal)
-vim.keymap.set("n", "<Tab>", vim.cmd.bnext, { desc = "Next buffer" })
+-- vim.keymap.set("n", "<Tab>", vim.cmd.bnext, { desc = "Next buffer" })
 -- Navegar al buffer anterior con Shift+Tab (solo en modo normal)
-vim.keymap.set("n", "<S-Tab>", vim.cmd.bprevious, { desc = "Previous buffer" })
+-- vim.keymap.set("n", "<S-Tab>", vim.cmd.bprevious, { desc = "Previous buffer" })
 -- NOTA: Estos mapeos solo funcionan en modo normal (n)
 -- En modo insert, <Tab> se usa para autocompletado (ver nvim-cmp.lua)
 
