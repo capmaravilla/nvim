@@ -12,12 +12,11 @@ return {
 		-- PRESET DE DISEÑO
 		-- ============================================
 
-		preset = "modern",
+		preset = "helix",
 		-- Otras opciones:
 		-- preset = "classic",
 		-- preset = "helix",
-
-		-- ESTO ES CRUCIAL: controla cuándo se expanden los grupos
+        		-- ESTO ES CRUCIAL: controla cuándo se expanden los grupos
 		expand = 0, -- 0 = nunca expandir automáticamente
 		-- 1 = expandir si solo hay un grupo
 		-- función = control personalizado		-- ============================================
