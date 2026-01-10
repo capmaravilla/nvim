@@ -12,7 +12,7 @@ return {
 		-- Actualiza todas las ramas remotas y elimina referencias obsoletas
 		{ "<leader>ga", ":Git fetch --all -p<cr>", desc = "Git fetch" },
 		-- Descarga y fusiona cambios del repositorio remoto
-		{ "<leader>gl", ":Git pull<cr>", desc = "Git pull" },
+		{ "<leader>gp", ":Git pull<cr>", desc = "Git pull" },
 		-- Otros mapeos útiles que puedes añadir:
 		-- { "<leader>gs", ":Git<cr>", desc = "Git status" },
 		-- { "<leader>gc", ":Git commit<cr>", desc = "Git commit" },

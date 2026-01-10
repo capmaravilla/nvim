@@ -12,8 +12,8 @@ return {
         "nvim-lua/plenary.nvim",
     },
     keys = {
-        { "<leader>lg", "<cmd>LazyGit<cr>", desc = "Open LazyGit" },
-        { "<leader>lf", "<cmd>LazyGitCurrentFile<cr>", desc = "LazyGit on current file" },
+        { "<leader>gl", "<cmd>LazyGit<cr>", desc = "Open LazyGit" },
+        { "<leader>gf", "<cmd>LazyGitCurrentFile<cr>", desc = "LazyGit on current file" },
     },
     config = function()
         -- Opcionales: controla transparencia, escala y bordes de la ventana flotante

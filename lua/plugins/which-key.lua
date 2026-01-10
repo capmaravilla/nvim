@@ -24,17 +24,16 @@ return {
 
 		-- ICONOS PERSONALIZADOS
 		-- ============================================
-		icons = {
-			rules = {
-				-- Icono personalizado para comandos de Obsidian
-				{ pattern = "obsidian", icon = "  ", color = "blue" },
-				-- Otros iconos que puedes añadir:
-				{ pattern = "git", icon = "  ", color = "orange" },
-				{ pattern = "lsp", icon = "  ", color = "green" },
-				{ pattern = "telescope", icon = "  ", color = "purple" },
-			},
-			group = "+",
-		},
+		-- icons = {
+		-- 	rules = {
+		-- 		-- Icono personalizado para comandos de Obsidian
+		-- 		{ pattern = "obsidian", icon = "  ", color = "blue" },
+		-- 		-- Otros iconos que puedes añadir:
+		-- 		{ pattern = "git", icon = "  ", color = "orange" },
+		-- 		{ pattern = "lsp", icon = "  ", color = "green" },
+		-- 		{ pattern = "telescope", icon = "  ", color = "purple" },
+		-- 	},
+		-- 	group = "+",
 
 		-- ============================================
 		-- OTRAS OPCIONES
@@ -104,17 +103,19 @@ return {
 		-- },
 	},
 
-  -- Codigo para hacer los grupos
+	-- Codigo para hacer los grupos
 
-  config = function(_, opts)
-    local wk = require("which-key")
+	config = function(_, opts)
+		local wk = require("which-key")
 
-    wk.setup(opts)
+		wk.setup(opts)
 
-    -- GRUPO <leader>a
-    wk.add({
-      { "<leader>a", group = "ia", icon = "🤖" },
-    })
-  end,
-
+		-- GRUPO <leader>a
+		wk.add({
+			{ "<leader>a", group = "IA" },
+			{ "<leader>f", group = "Telescope" },
+			{ "<leader>n", group = "Obsidian" },
+			{ "<leader>g", group = "Git" },
+		})
+	end,
 }

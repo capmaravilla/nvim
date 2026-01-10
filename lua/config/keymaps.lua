@@ -29,3 +29,17 @@ end, { desc = "Format buffer (Conform)" })
 -- vim.keymap.set("v", "<leader>f", function()
 --   require("conform").format({ async = true, range = true })
 -- end, { desc = "Format selection" })
+-- -- Guardar archivo
+vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Save file" })
+
+-- Guardar todos los buffers
+vim.keymap.set("n", "<leader>W", "<cmd>wa<cr>", { desc = "Save all" })
+
+-- Salir (solo si no hay cambios)
+vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit" })
+
+-- Salir forzado (descarta cambios)
+vim.keymap.set("n", "<leader>Q", "<cmd>q!<cr>", { desc = "Quit without saving" })
+
+-- Guardar y salir
+vim.keymap.set("n", "<leader>wq", "<cmd>wq<cr>", { desc = "Save and quit" })

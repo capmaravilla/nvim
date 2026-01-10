@@ -35,19 +35,19 @@ return {
 		-- MAPEOS LSP (LANGUAGE SERVER PROTOCOL)
 		-- ============================================
 		-- Ir a la definición de un símbolo (reemplaza fzf-lua)
-		{ "gd", "<cmd>Telescope lsp_definitions<cr>", desc = "Go to Definition" },
+		{ "fd", "<cmd>Telescope lsp_definitions<cr>", desc = "Go to Definition" },
 		-- Ver todas las referencias de un símbolo
-		{ "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
+		{ "fe", "<cmd>Telescope lsp_references<cr>", desc = "References" },
 		-- Ver implementaciones de una interfaz/tipo
-		{ "gi", "<cmd>Telescope lsp_implementations<cr>", desc = "Implementations" },
+		{ "fi", "<cmd>Telescope lsp_implementations<cr>", desc = "Implementations" },
 		-- Ver símbolos del documento actual
-		{ "<leader>ds", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document Symbols" },
+		{ "<leader>fy", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document Symbols" },
 		-- Ver símbolos del workspace
-		{ "<leader>ws", "<cmd>Telescope lsp_workspace_symbols<cr>", desc = "Workspace Symbols" },
+		{ "<leader>fY", "<cmd>Telescope lsp_workspace_symbols<cr>", desc = "Workspace Symbols" },
 		-- Ver diagnósticos del documento
-		{ "<leader>dd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document Diagnostics" },
+		{ "<leader>fd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document Diagnostics" },
 		-- Ver todos los diagnósticos
-		{ "<leader>dD", "<cmd>Telescope diagnostics<cr>", desc = "All Diagnostics" },
+		{ "<leader>fD", "<cmd>Telescope diagnostics<cr>", desc = "All Diagnostics" },
 		
 		-- ============================================
 		-- OTROS MAPEOS ÚTILES
