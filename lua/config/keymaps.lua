@@ -5,6 +5,15 @@
 -- Los mapeos principales están en settings.lua
 
 -- ============================================
+-- LÍDERES (LEADER KEYS)
+-- ============================================
+-- Define la tecla líder para mapeos personalizados
+-- La tecla líder es "Espacio" (más cómodo que la barra invertida por defecto)
+vim.g.mapleader = " "
+-- Líder local para mapeos específicos de buffer
+vim.g.maplocalleader = "\\"
+
+-- ============================================
 -- MAPEOS DE TECLADO - NAVEGACIÓN DE BUFFERS
 -- ============================================
 -- Navegar al siguiente buffer con Tab (solo en modo normal)
@@ -16,6 +25,15 @@ vim.keymap.set("n", "<S-Tab>", vim.cmd.bprevious, { desc = "Previous buffer" })
 
 -- Mapeo comentado (por si lo necesitas más adelante):
 -- vim.keymap.set("n", "<leader>o", "o<Esc>k", { desc = "Insert new line above" })
+
+-- Keybinds to make split navigation easier.
+--  Use CTRL+<hjkl> to switch between windows
+--
+--  See `:help wincmd` for a list of all window commands
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- ============================================
 -- MAPEO PARA FORMATEO DE CÓDIGO
@@ -46,23 +64,3 @@ vim.keymap.set("n", "<leader>Q", "<cmd>q!<cr>", { desc = "Quit without saving", 
 
 -- Guardar y salir
 vim.keymap.set("n", "<leader>wq", "<cmd>wq<cr>", { desc = "Save and quit", silent = true })
-
-local wk = require("which-key")
-wk.add({
-	-- { "<leader>f", group = "file" }, -- group
-	-- { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File", mode = "n" },
-	-- { "<leader>fb", function() print("hello") end, desc = "Foobar" },
-	-- { "<leader>fn", desc = "New File" },
-	{ "<leader>w", hidden = true }, -- hide this keymap
-	{ "<leader>q", hidden = true }, -- hide this keymap
-	{ "<leader>W", hidden = true }, -- hide this keymap
-	{ "<leader>Q", hidden = true }, -- hide this keymap
-	-- {
-	--   -- Nested mappings are allowed and can be added in any order
-	--   -- Most attributes can be inherited or overridden on any level
-	--   -- There's no limit to the depth of nesting
-	--   mode = { "n", "v" }, -- NORMAL and VISUAL mode
-	--   { "<leader>q", "<cmd>q<cr>", desc = "Quit" }, -- no need to specify mode since it's inherited
-	--   { "<leader>w", "<cmd>w<cr>", desc = "Write" },
-	-- }
-})

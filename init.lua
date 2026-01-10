@@ -1,3 +1,11 @@
+--      ___  __ 
+--     |__ \/_ |
+--        ) || |
+--       / / | |
+--      / /_ | |
+--     |____||_|
+--              
+--    
 -- ============================================
 -- CONFIGURACIÓN PRINCIPAL DE NEOVIM
 -- ============================================
@@ -8,5 +16,5 @@
 -- 3. keymaps: Mapeos de teclado personalizados
 
 require("config.settings")
-require("config.lazy")
 require("config.keymaps")
+require("config.lazy")

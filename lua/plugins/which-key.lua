@@ -117,6 +117,11 @@ return {
 			{ "<leader>n", group = "Obsidian" },
 			{ "<leader>g", group = "Git" },
 			{ "<leader>l", group = "LSP" },
+
+			{ "<leader>w", hidden = true }, -- hide this keymap
+			{ "<leader>q", hidden = true }, -- hide this keymap
+			{ "<leader>W", hidden = true }, -- hide this keymap
+			{ "<leader>Q", hidden = true }, -- hide this keymap
 		})
 	end,
 }
