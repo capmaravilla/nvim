@@ -62,6 +62,7 @@ vim.opt.confirm = true
 vim.opt.clipboard = "unnamedplus"
 
 -- Número de espacios al insertar un tab
+vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 
 -- Convierte tabs en espacios (recomendado para consistencia)

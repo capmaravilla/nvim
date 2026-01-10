@@ -6,7 +6,7 @@
 
 return {
 	"stevearc/oil.nvim",
-	lazy = false,  -- Carga inmediatamente (recomendado para mejor experiencia)
+	lazy = false, -- Carga inmediatamente (recomendado para mejor experiencia)
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	keys = {
 		-- Abre el explorador de archivos
@@ -54,24 +54,24 @@ return {
 			-- MAPEOS DE TECLADO DENTRO DE OIL
 			-- ============================================
 			keymaps = {
-				
-        ["<C-h>"] = false,        
-        ["<C-l>"] = false,        
-        ["<C-t>"] = false,        
 
-        ["g?"] = "actions.show_help",        -- Muestra ayuda
-				["<CR>"] = "actions.select",          -- Abre archivo/carpeta
-				["<leader><CR>"] = "actions.select_vsplit",  -- Abre en split vertical
-				["<C><s>"] = "actions.select_split",   -- Abre en split horizontal
+				["<C-h>"] = false,
+				["<C-l>"] = false,
+				["<C-t>"] = false,
+
+				["g?"] = "actions.show_help", -- Muestra ayuda
+				["<CR>"] = "actions.select", -- Abre archivo/carpeta
+				["<leader><CR>"] = "actions.select_vsplit", -- Abre en split vertical
+				["<C><s>"] = "actions.select_split", -- Abre en split horizontal
 				-- ["<C-t>"] = "actions.select_tab",     -- Abre en nueva pestaña
-				["<C-p>"] = "actions.preview",        -- Vista previa
-				["<C-c>"] = "actions.close",          -- Cierra Oil
-				["<C-r>"] = "actions.refresh",        -- Actualiza la vista
-				["<backspace>"] = "actions.parent",   -- Sube al directorio padre
-				["_"] = "actions.open_cwd",           -- Abre directorio actual
-				["`"] = "actions.cd",                -- Cambia directorio
-				["~"] = "actions.tcd",               -- Cambia directorio de trabajo
-				["g."] = "actions.toggle_hidden",     -- Alterna archivos ocultos
+				["<C-p>"] = "actions.preview", -- Vista previa
+				["<C-c>"] = "actions.close", -- Cierra Oil
+				["<C-r>"] = "actions.refresh", -- Actualiza la vista
+				["<backspace>"] = "actions.parent", -- Sube al directorio padre
+				["_"] = "actions.open_cwd", -- Abre directorio actual
+				["`"] = "actions.cd", -- Cambia directorio
+				["~"] = "actions.tcd", -- Cambia directorio de trabajo
+				["g."] = "actions.toggle_hidden", -- Alterna archivos ocultos
 				-- Otros mapeos disponibles:
 				-- ["<C-r>"] = "actions.refresh",      -- Refrescar
 				-- ["-"] = "actions.parent",           -- Directorio padre (alternativa)
