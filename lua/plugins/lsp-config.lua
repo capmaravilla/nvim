@@ -13,14 +13,14 @@ return {
 		"williamboman/mason.nvim",
 		opts = {
 			-- Otras opciones disponibles:
-			-- ui = {
-			--   icons = {
-			--     package_installed = "✓",
-			--     package_pending = "➜",
-			--     package_uninstalled = "✗",
-			--   },
-			-- },
-			-- max_concurrent_installers = 4,  -- Instalaciones en paralelo
+			ui = {
+			  icons = {
+			    package_installed = "󱚝",
+			    package_pending = "",
+			    package_uninstalled = "󰚌",
+			  },
+			},
+			max_concurrent_installers = 4,  -- Instalaciones en paralelo
 		},
 	},
 
@@ -43,6 +43,7 @@ return {
 					"html", -- HTML Language Server
 					"cssls", -- CSS Language Server
 					"marksman", -- Markdown Language Server
+          "ruff", --Ruff
 					-- Otros servidores LSP que puedes añadir:
 					-- "rust_analyzer",  -- Rust
 					-- "gopls",         -- Go
