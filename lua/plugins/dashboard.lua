@@ -6,7 +6,7 @@
 
 return {
 	"goolord/alpha-nvim",
-	event = "VimEnter",  -- Se carga al entrar a Neovim
+	event = "VimEnter", -- Se carga al entrar a Neovim
 
 	config = function()
 		local alpha = require("alpha")
@@ -85,17 +85,15 @@ return {
 		-- PIE DE PÁGINA
 		-- ============================================
 		dashboard.section.footer.val = {
-			"",
-			"",
 			nvim_version(),
 		}
 
 		-- ============================================
 		-- ESTILO Y COLORES
 		-- ============================================
-		dashboard.section.header.opts.hl = "Type"      -- Color del header
-		dashboard.section.buttons.opts.hl = "Keyword"  -- Color de los botones
-		dashboard.section.footer.opts.hl = "NonText"   -- Color del footer
+		dashboard.section.header.opts.hl = "Type" -- Color del header
+		dashboard.section.buttons.opts.hl = "Keyword" -- Color de los botones
+		dashboard.section.footer.opts.hl = "Normal" -- Color del footer
 
 		-- Desactiva autocmds para mejor rendimiento
 		dashboard.opts.opts.noautocmd = true
