@@ -76,12 +76,13 @@ vim.opt.smarttab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 
+vim.opt.conceallevel = 1
+
 -- DIAGNÓSTICOS LSP
 -- Configura cómo se muestran los errores y advertencias del LSP
 vim.diagnostic.config({
 	virtual_text = true, -- Muestra errores en línea como texto virtual
 })
-
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`

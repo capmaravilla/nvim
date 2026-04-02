@@ -18,7 +18,7 @@ return {
 		workspaces = {
 			{
 				name = "Sanctuary IV", -- Nombre de tu bóveda
-				path = "D:/Mis Documentos/GoogleDrive/PKM/Sanctuary IV", -- Ruta completa
+				path = "D:/Mis Documentos/Google Drive/PKM/Sanctuary IV/", -- Ruta completa
 				new_notes_location = "Inbox",
 			},
 			-- Puedes añadir más bóvedas si las tienes:
@@ -32,7 +32,7 @@ return {
 		-- NOTAS DIARIAS (Daily Notes)
 		-- ============================================
 		daily_notes = {
-			folder = "daily", -- Carpeta donde se guardan las notas diarias
+			folder = "Diario", -- Carpeta donde se guardan las notas diarias
 			date_format = "%Y-%m-%d", -- Formato: 2026-01-09
 			-- alias_format = "%B %-d, %Y",  -- Alias legible: January 9, 2026
 			-- default_tags = { "daily-notes" },  -- Tags automáticos
@@ -150,7 +150,7 @@ return {
 		-- ADJUNTOS (Imágenes, PDFs, etc.)
 		-- ============================================
 		attachments = {
-			img_folder = "attachments", -- Carpeta para imágenes
+			img_folder = "Recursos", -- Carpeta para imágenes
 			-- img_name_func = function()
 			--   return string.format("%s-", os.time())  -- Nombre con timestamp
 			-- end,
